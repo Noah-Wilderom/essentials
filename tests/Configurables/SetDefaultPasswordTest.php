@@ -34,3 +34,11 @@ it('can be disabled via configuration', function (): void {
 
     expect($setDefaultPassword->enabled())->toBeFalse();
 });
+
+it('is disabled when testing', function (): void {
+    app()->detectEnvironment(fn (): string => 'testing');
+
+    $setDefaultPassword = new SetDefaultPassword;
+
+    expect($setDefaultPassword->enabled())->toBeFalse();
+});

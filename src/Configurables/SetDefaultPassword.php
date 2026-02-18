@@ -14,7 +14,8 @@ final class SetDefaultPassword implements Configurable
      */
     public function enabled(): bool
     {
-        return config()->boolean(sprintf('essentials.%s', self::class), true);
+        return app()->runningUnitTests() === false
+            && config()->boolean(sprintf('essentials.%s', self::class), true);
     }
 
     /**
