@@ -6,7 +6,7 @@ use Illuminate\Validation\Rules\Password;
 use NunoMaduro\Essentials\Configurables\SetDefaultPassword;
 
 beforeEach(function (): void {
-    Password::defaults(null);
+    Password::defaults();
 });
 
 it('sets default password rules', function (): void {
