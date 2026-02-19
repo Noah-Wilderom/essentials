@@ -173,8 +173,8 @@ return [
     | Enabled commands
     |--------------------------------------------------------------------------
     | This option allows you to specify which commands should be
-    | registered in your application. You can add or remove commands
-    | as needed.
+    | registered in your application. You can remove commands
+    | if needed.
     |
     */
 
