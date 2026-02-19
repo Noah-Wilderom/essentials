@@ -32,11 +32,11 @@ final class EssentialsServiceProvider extends BaseServiceProvider
     ];
 
     /**
-     * The list of commands.
+     * The default list of commands.
      *
      * @var list<class-string<Command>>
      */
-    private array $commandsList = [
+    private array $defaultCommandsList = [
         Commands\EssentialsRectorCommand::class,
         Commands\EssentialsPintCommand::class,
         Commands\MakeActionCommand::class,
@@ -53,7 +53,7 @@ final class EssentialsServiceProvider extends BaseServiceProvider
             ->each(fn (Configurable $configurable) => $configurable->configure());
 
         if ($this->app->runningInConsole()) {
-            $this->commands($this->commandsList);
+            $this->commands(config('essentials.commands', $this->defaultCommandsList));
 
             $this->publishes([
                 __DIR__.'/../stubs' => $this->app->basePath('stubs'),

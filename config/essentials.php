@@ -168,4 +168,19 @@ return [
 
     NunoMaduro\Essentials\Configurables\Unguard::class => false,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Enabled commands
+    |--------------------------------------------------------------------------
+    | This option allows you to specify which commands should be
+    | registered in your application. You can add or remove commands
+    | as needed.
+    |
+    */
+
+    'commands' => [
+        NunoMaduro\Essentials\Commands\EssentialsRectorCommand::class,
+        NunoMaduro\Essentials\Commands\EssentialsPintCommand::class,
+        NunoMaduro\Essentials\Commands\MakeActionCommand::class,
+    ],
 ];
